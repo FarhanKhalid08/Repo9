@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 
 public class Class9 {
@@ -18,8 +17,7 @@ public class Class9 {
 	public static Select select;
 	public static WebDriverWait wait;
 	
-	@Test
-	public void BrowserLaunch() {
+	public static void main (String[] args) {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://rediff.com");
@@ -33,10 +31,6 @@ public class Class9 {
 		Assert.assertEquals(CurrentUrl, ExpectedCurrentUrl);
 		Assert.assertEquals(CurrentTitle, ExpectedTitle);
 		
-		}
-	
-	@Test
-	public void CreateAccount() throws Exception {
 		WebElement CreateAccountLink= driver.findElement(By.xpath("//a[contains(text(),'Create Account')]"));
 		Assert.assertTrue(CreateAccountLink.isDisplayed());
 		CreateAccountLink.click();
